@@ -1,16 +1,27 @@
 package us.syh.fragmenttest;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-public class DynamicFragmentRun extends Fragment {
+public class DynamicFragmentRun extends AppCompatActivity {
+    private FragmentManager manager;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
-        View view=inflater.inflate(R.layout.dynamic_fragment_run,container,false);
-        return view;
+    protected void onCreate(Bundle saveInstanceState){
+        super.onCreate(saveInstanceState);
+        setContentView(R.layout.dynamic_fragment_run);
+        manager=getSupportFragmentManager();
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DynamicFragment myfragment=new DynamicFragment();
+                FragmentTransaction transaction=manager.beginTransaction();
+                transaction.add(R.id.fragments,myfragment);
+                transaction.commit();
+            }
+        });
     }
 }
