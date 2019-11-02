@@ -14,7 +14,7 @@ public class DynamicFragment extends Fragment {
         Bundle bundle=getArguments();
         if(bundle!=null){
             String message=bundle.getString("message");
-            
+            System.out.println(message);
         }
         //定义一个view对象，并返回
         //第一个参数为上面定义的布局文件，第二参数为传入的参数，第三个参数一般设为false
