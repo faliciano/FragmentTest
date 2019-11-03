@@ -21,6 +21,12 @@
         android:layout_height="wrap_content"
         android:text="传递消息到fragment" />
 
+    <Button
+        android:id="@+id/button_receive_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="接收来自fragment的消息" />
+
     <LinearLayout
         android:id="@+id/fragments"
         android:layout_width="match_parent"
