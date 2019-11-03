@@ -15,6 +15,12 @@
         android:layout_height="wrap_content"
         android:text="添加动态fragment" />
 
+    <Button
+        android:id="@+id/button_sent_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="传递消息到fragment" />
+
     <LinearLayout
         android:id="@+id/fragments"
         android:layout_width="match_parent"
